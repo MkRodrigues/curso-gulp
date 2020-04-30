@@ -86,7 +86,7 @@ Uma função que modifica um arquvo, deve retornar o arquivo na primeira linha
 
 **O pacote Concat, concatena pequenos pedaços de arquivos Javascript, e retona em um único arquivo todos esses arquivos mergidos.**
 
-<span class="colour" style="color:rgb(199, 146, 234)"></span>forma errada
+<span class="colour" style="color:red">**Forma Incorreta**</span>
 
 ``` javascript
 function gulpJs() {
@@ -96,13 +96,12 @@ function gulpJs() {
 }
 ```
 
-Obs.: A função Concat, recebe como primeiro parâmetro o output do arquivo final *main.js*
-
+<span class="colour" style="color:grey">Obs.: A função Concat, recebe como primeiro parâmetro o output do arquivo final \*main.js\*</span>
 Note que o código acima está redirecionando o arquivo final Main.js para a mesma pasta onde está buscando os arquivos que serão concatenados. Esta ação pode gerar um loop infinito na linha de comando, visto que toda vez que o arquivo main.js for gerado, a função watch perceberá uma mudança e concatenará os arquivos novamente. Para corrigir, redirecione or aquivos para um <b>*diretório* *diferente*</b>, ou sinalize à função que este arquivo deve ser ignorado inserindo os parâmetros em vetor: `gulp.watch(['js/*.js', '!js/main.js']);`
 
-<span class="colour" style="color:rgb(199, 146, 234)">Forma correta</span>
+<span class="colour" style="color:green">**Forma correta**</span>
 
-```
+``` javascript
 function gulpJs() {
     return gulp.src('js/assets_js/*.js')
         .pipe(concat('main.js'))
