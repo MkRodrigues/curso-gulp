@@ -7,14 +7,6 @@ const concat = require('gulp-concat');
 const babel = require('gulp-babel');
 const uglify = require('gulp-uglify');
 
-// import { src, dest, task, watch as _watch, parallel } from 'gulp';
-// import sass from 'gulp-sass';
-// import autoprefixer from 'gulp-autoprefixer';
-// const browserSync = require('browser-sync').create();
-// import concat from 'gulp-concat';
-// import babel from 'gulp-babel';
-// import uglify from 'gulp-uglify';
-
 /* --------------------------------- Funções -------------------------------- */
 /* ---------------------------------- Sass ---------------------------------- */
 // Função para compilar Sass e adicionar prefixos
